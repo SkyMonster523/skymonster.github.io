@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="mydiv">
+    <h1 v-text="msg"></h1>
+    <!--双向绑定:指元素内容和vue中的变量进行绑定后,元素内容改变会影响变量值的改变
+    同事变量值发生改变也会影响页面跟着改变-->
+    <input type="text" v-model="msg">
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    setTimeout(function () {
+        app.msg="值改变了!";
+    },3000);
+    let app = new Vue({
+        el:"#mydiv",
+        data:{msg:"刘国斌大水比"}
+    })
+</script>
+</body>
+</html>

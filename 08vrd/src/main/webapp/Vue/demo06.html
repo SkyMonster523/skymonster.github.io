@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="mydiv">
+    <!--v-on给元素添加事件-->
+    <input type="button" value="按钮1" v-on:click="myfn()">
+    <!--@事件名:作用和上面v-on一样-->
+    <input type="button" value="按钮2" @click="myfn()">
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    let app = new Vue({
+        el:"#mydiv",
+        data:{//在这里添加和vue相关的变量
+            msg:"文本测试"
+        },
+        method:{//在这里添加和vue相关的方法
+            myfn:function () {
+                alert("方法触发了")
+            }
+
+        }
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="mydiv">
+    <div v-for="(p,1) in persons">
+        <p v-text="p.id">id</p>
+        <p v-text="p.name">名字</p>
+        <p v-text="p.job">工作</p>
+        <p v-text="p.age">年龄</p>
+        下标:<span v-text="i"></span>
+        <hr>
+    </div>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    let app = new Vue({
+        el:"#mydiv",
+        data:{
+            persons:[{id:1,name:"张三",job:"程序员",age:18},
+                    {id:2,name:"李四",job:"销售",age:28},
+                    {id:3,name:"王五",job:"人事",age:35}]
+        }
+    })
+</script>
+</body>
+</html>

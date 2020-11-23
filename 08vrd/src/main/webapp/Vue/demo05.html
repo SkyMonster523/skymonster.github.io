@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="mydiv">
+    <!--v-bind给元素添加属性-->
+    <h1 v-bind:style="{'color':msg}">属性测试</h1>
+</div>
+<script src="../js/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el:"#mydiv",
+            data:{msg:"red"}
+        })
+    </script>
+</body>
+</html>

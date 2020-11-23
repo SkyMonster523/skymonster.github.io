@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="shortcut icon" href="favicon.ico">
+
+<meta charset="UTF-8">
+<title>登录页面</title>
+<meta name="viewport"
+  content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css"
+  href="bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css"
+  href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+      <style type="text/css">
+      body{
+        background-color: #2e2e2e;
+        color: white;
+      }
+      .row h1{
+        color: #ffc600;
+      }
+      .control-label{
+        color: black;
+      }
+      #heading{
+        background-color: black;
+        color: #ffc600;
+      }
+      .panel-default{
+        border-color: #ffc600;
+      }
+      input[type='checkbox']{
+      	position: relative;
+      	top: 7px;
+      	left: -10px;
+      }
+    </style>
+</head>
+<body>
+  <!--登录页标题-->
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+          <h1>
+            <small>欢迎使用</small> <b>VRD</b>作品展示系统
+          </h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <!--登录面板-->
+        <div class="panel panel-default">
+          <!--面板标题-->
+          <div class="panel-heading" id="heading">
+            <h2 class="panel-title">登录</h2>
+          </div>
+          <!--面板主体-->
+          <div class="panel-body">
+            <!--登录表单-->
+            <form id="myform" class="form-horizontal" role="form"
+              action="loginaction" method="post">
+              <!--用户名-->
+              <div class="form-group">
+                <label for="name" class="col-md-2 control-label">用户名</label>
+                <div class="col-md-8">
+                  <input type="text" th:value="${username}"
+                    class="form-control" id="name" name="username"
+                    placeholder="请输入用户名">
+                </div>
+              </div>
+              <!--密码-->
+              <div class="form-group">
+                <label for="pwd" class="col-md-2 control-label">密码</label>
+                <div class="col-md-8">
+                  <input type="password" th:value="${password}"
+                    class="form-control" id="pwd" name="password"
+                    placeholder="请输入密码">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="pwd" class="col-md-3 control-label">记住用户名和密码</label>
+                <div class="col-md-9">
+                  <input type="checkbox" name="rem">
+                </div>
+              </div>
+              <!--登录按钮-->
+              <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                  <button type="submit" class="btn btn-default sublogin">登录</button>
+                  <span></span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <!--网页页脚-->
+  <footer>
+    <div class="container">
+      <div class="text-center">
+        Copyright © 2018 Tedu.cn All Rights Reserved <br />
+         京ICP备16053980号-5 <a target="_blank" href="http://www.tedu.cn/">达内时代科技集团有限公司</a>
+        版权所有
+      </div>
+    </div>
+  </footer>
+</body>
+<script type="text/javascript" src="bootstrap3/jquery.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="bootstrap3/js/holder.js"></script>
+<script type="text/javascript" src="bootstrap3/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="bootstrap3/js/respond.min.js"></script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

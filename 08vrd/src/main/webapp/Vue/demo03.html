@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="mydiv">
+    <div>{{info}}</div><!--如果网速慢时有可能会出现短暂的闪烁-->
+    <div v-text="info"></div>
+    <!--v-html修改元素的html内容 innerHTML-->
+    <div v-html="info"></div>
+</div>
+<script src="../bootstrap3/jquery.min.js"></script>
+<script src="../js/vue.js"></script>
+<script>
+    let app = new Vue({
+        el:"#mydiv",//只能处理#mydiv这个元素里面的数据显示
+        data:{info:"<h1>文本测试</h1>>"}
+    })
+</script>
+</body>
+</html>

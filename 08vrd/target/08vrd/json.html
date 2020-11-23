@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1.创建数组类型的json对象
+    let j1 = ["刘顺备","关顺羽","张顺飞"];
+    //2.创建map集合类型的json对象
+    let j2 = {"name":"吕小布","age":"18"};
+    //3. 创建嵌套类型的json对象
+    let j3 = {"id":101,"name":"苍老师","friends":["传奇哥","克晶姐"]
+    ,"company":{"id":5,"name":"达内","job":"摄影","salary":"15000"}};
+    console.log(j1[1])
+    console.log(j2.name)
+    console.log(j2.age)
+    console.log(j3.company.name)
+    //json对象和json字符串的区别
+    let jsonStr = '["刘顺备","关顺羽","张顺飞"]';
+    //把json字符串转化json对象
+    let j4 = JSON.parse(jsonStr);
+    console.log(j4[2]);
+</script>
+</body>
+</html>

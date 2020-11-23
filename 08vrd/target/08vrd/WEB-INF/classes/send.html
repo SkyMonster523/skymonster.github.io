@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>发布作品</title> 
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css"
+	href="bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css"
+	href="bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+<style type="text/css">
+	body {
+	background-color: #2e2e2e;
+	padding-top: 20px;
+	color: #ffc600;
+}
+.navbar{
+	background-color: black;
+	border: none;
+}
+h3{
+	color: #ffc600;
+	position: absolute;
+	left: 43%;
+	top: -7px;
+}
+
+#back{
+	color: #ffc600;
+	position: relative;
+	left: -10px;
+}
+</style>
+
+</head>
+<body>
+<header>
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <div class="logo">
+            <a href="home"><img src="images/logo.png"/></a>
+          </div>
+         </div>
+         <h3 >发布作品</h3>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a id="back"
+            href="home">返回首页</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>	 
+	 
+	<div class="container">
+		<div class="row">
+			<!--左侧主要内容-->
+			<div class="col-md-offset-2 col-md-8">
+				<div class="bs-docs-section">
+					<form action="send" method="post"
+					enctype="multipart/form-data">
+						<div class="form-group">
+							<label for="title">标题</label> <input type="text"
+								class="form-control" id="title" name="title"
+								placeholder="请输入作品标题">
+						</div>
+						<div class="form-group">
+							<label for="aabstract">作者姓名</label> <input type="text"
+								class="form-control" id="aabstract" name="author"
+								placeholder="请输入作者姓名">
+						</div>
+						<div class="form-group">
+							<label for="intro">作品简介</label>
+							<textarea class="form-control" rows="4" id="intro"
+								name="intro" >无详细介绍</textarea>
+						</div>
+						<div class="form-group">
+                          <label >选择分类</label>
+                          <select name="categoryId">
+                            <option th:each="c :${list}" th:value="${c.id}" th:text="${c.name}"></option>
+                          </select> 
+                        </div>
+						<div class="form-group">
+							<label >选择文件</label> <input type="file" id="file"
+								name="file">
+						</div>
+                        <div class="text-center">
+	       					<button type="submit" class="btn btn-danger btn-lg ">发布作品</button>
+                        
+                        </div>
+					</form>
+				</div>
+			</div>
+			<!--左侧内容结束-->
+			
+		</div>
+	</div>
+	<!--网页底部-->
+	<footer class="well container">
+			<b> Copyright © 2018 Tedu.cn All Rights Reserved
+				 京ICP备16053980号-5 <a href="http://www.tedu.cn/">达内时代科技集团有限公司</a>
+				版权所有
+			</b> <span class="pull-right"> <b>Version</b> 0.1.0
+			</span>
+	</footer>
+<script src="bootstrap3/jquery.min.js"></script>
+
+<script>
+	//给提交按钮添加点击事件
+	$("button").click(function () {
+		//console.log("选择的文件:"+$("#file").val());
+		if ($("#file").val()==""){//如果没有选择文件 取消事件
+			alert("请您选择上传的文件!");
+			return false;//如果在事件中执行return false代表取消当前事件
+		}
+	});
+</script>
+
+</body>
+
+</html>

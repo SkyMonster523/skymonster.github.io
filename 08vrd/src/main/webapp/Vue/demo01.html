@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="mydiv">
+    <h3>商品数量{{count}}</h3>
+</div>
+
+<input type="button" value="添加">
+
+<script src="../bootstrap3/jquery.min.js"></script>
+<script src="../js/vue.js"></script>
+<script>
+    //创建vue对象
+    let app = new Vue({
+        el:"#mydiv",
+        data:{
+            count:0
+        }
+    })
+
+    $("input").click(function () {
+        app.count++;
+    })
+</script>
+</body>
+</html>
